@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links | Dein Name</title>
+    <link rel="icon" href="./img/favicon.png">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="linktree-body">
+
+    <main class="linktree-container">
+        
+        <button id="share-btn" class="action-btn top-right" aria-label="Seite teilen">
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        </button>
+
+        <div class="linktree-profile">
+            <img src="./img/profilbild.jpg" alt="Profilbild" class="linktree-logo">
+            <h1 class="linktree-title">Dein Name</h1>
+            <p class="linktree-desc">Kurze, knackige Beschreibung über dich. Was machst du? Warum sollten Leute dir folgen? ✨</p>
+            
+            <div class="social-icons-row">
+                <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="linktree-links">
+            
+            <div class="featured-card">
+                <div class="featured-icon-wrapper">
+                    <i class="fa-brands fa-youtube featured-main-icon"></i>
+                </div>
+                
+                <h2 class="featured-title">Neuestes Video</h2>
+                <p class="featured-subtitle">
+                    <i class="fa-solid fa-video"></i> YouTube • Titel des Videos
+                </p>
+                
+                <a href="#" target="_blank" class="featured-action-btn">Jetzt ansehen</a>
+                
+                <i class="fa-solid fa-ellipsis-vertical featured-options-icon"></i>
+            </div>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon"><i class="fa-solid fa-globe"></i></div>
+                <span class="btn-text">Meine Webseite</span>
+                <i class="fa-solid fa-ellipsis-vertical options-icon"></i>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon"><i class="fa-brands fa-instagram"></i></div>
+                <span class="btn-text">Instagram (@dein_name)</span>
+                <i class="fa-solid fa-ellipsis-vertical options-icon"></i>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon"><i class="fa-brands fa-tiktok"></i></div>
+                <span class="btn-text">TikTok</span>
+                <i class="fa-solid fa-ellipsis-vertical options-icon"></i>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                <span class="btn-text">Kaffeekasse (Ko-fi)</span>
+                <i class="fa-solid fa-ellipsis-vertical options-icon"></i>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon"><i class="fa-brands fa-amazon"></i></div>
+                <span class="btn-text">Meine Amazon Wunschliste</span>
+                <i class="fa-solid fa-ellipsis-vertical options-icon"></i>
+            </a>
+
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('share-btn').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Meine Links',
+                        text: 'Schau dir meine aktuellen Links an!',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Teilen abgebrochen oder fehlgeschlagen', err);
+                }
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link wurde in die Zwischenablage kopiert!');
+            }
+        });
+    </script>
+
+</body>
+</html>

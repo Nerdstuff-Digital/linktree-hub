@@ -1,0 +1,286 @@
+/* =========================================
+   BASIS-STYLING (Mobile First / Flache Ansicht)
+   ========================================= */
+/* TIPP: Hier kannst du die Hauptfarben anpassen */
+:root {
+    --main-bg-color: rgb(6, 23, 30); /* Helle Karten-Farbe (Mobile Hintergrund) */
+    --dark-bg-color: #053f3f; /* Dunklerer Hintergrund für Desktop */
+    --accent-color: #0a5c5c;  /* Farbe für den Highlight-Button */
+    --accent-hover: #074141;  /* Hover-Farbe für den Highlight-Button */
+}
+
+.linktree-body {
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 30px 15px;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.linktree-container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out;
+    position: relative;
+}
+
+/* =========================================
+   DESKTOP "KARTEN"-ANSICHT
+   ========================================= */
+@media (min-width: 768px) {
+    .linktree-body {
+        background-color: var(--dark-bg-color);
+        padding: 60px 20px;
+        justify-content: flex-start;
+    }
+
+    .linktree-container {
+        background-color: var(--main-bg-color);
+        padding: 50px 40px;
+        border-radius: 35px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* =========================================
+   AKTION BUTTONS (Z.B. SHARE)
+   ========================================= */
+.action-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--dark-bg-color);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.action-btn:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+@media (min-width: 768px) {
+    .top-right {
+        top: 30px;
+        right: 30px;
+    }
+}
+
+/* =========================================
+   PROFIL BEREICH
+   ========================================= */
+.linktree-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+.linktree-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background-color: rgba(255,255,255,0.2); /* Falls kein Bild da ist */
+}
+
+.linktree-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    color: white;
+    font-weight: bold;
+}
+
+.linktree-desc {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 90%;
+}
+
+.social-icons-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+}
+
+/* =========================================
+   LINKS & BUTTONS
+   ========================================= */
+.linktree-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.linktree-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.linktree-btn:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* NEU: Das Styling für die Icons in den Buttons */
+.link-icon {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.15); /* Leicht transparenter Kasten */
+    border-radius: 8px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 20px;
+}
+
+.options-icon {
+    position: absolute;
+    right: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+}
+
+/* =========================================
+   FEATURED / HIGHLIGHT KARTE
+   ========================================= */
+.featured-card {
+    position: relative;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Großer Icon-Platzhalter für die Highlight-Karte */
+.featured-icon-wrapper {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 16 / 9; /* Typisches Video-Format statt quadratisch */
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.featured-main-icon {
+    font-size: 4rem;
+    color: white;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+}
+
+.featured-title {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.featured-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.featured-action-btn {
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.featured-action-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.featured-options-icon {
+    position: absolute;
+    bottom: 25px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+}
+
+/* =========================================
+   ANIMATIONEN
+   ========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

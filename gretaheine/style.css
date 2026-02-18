@@ -1,0 +1,280 @@
+/* =========================================
+   BASIS-STYLING (Mobile First / Flache Ansicht)
+   ========================================= */
+.linktree-body {
+    background-color: #0C7676; /* Standard Hintergrund für Mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Zentriert alles vertikal auf dem Handy */
+    min-height: 100vh;
+    padding: 30px 15px;
+    margin: 0;
+    font-family: sans-serif; /* Ggf. durch deine eigenen Fonts ersetzen */
+    box-sizing: border-box;
+}
+
+.linktree-container {
+    width: 100%;
+    max-width: 480px; /* Etwas schmaler für eine elegante Karte */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out;
+    position: relative; /* WICHTIG für den Share-Button oben rechts */
+}
+
+/* =========================================
+   DESKTOP "KARTEN"-ANSICHT (ab Tablet-Größe)
+   ========================================= */
+@media (min-width: 768px) {
+    .linktree-body {
+        background-color: #053f3f; /* Dunklerer Hintergrund für den edlen Look */
+        padding: 60px 20px;
+        justify-content: flex-start; /* Karte startet weiter oben */
+    }
+
+    .linktree-container {
+        background-color: #0C7676; /* Helle Karten-Farbe */
+        padding: 50px 40px;
+        border-radius: 35px; /* Starke Abrundung aus dem Screenshot */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* Weicher Schatten */
+    }
+}
+
+/* =========================================
+   AKTION BUTTONS (Z.B. SHARE)
+   ========================================= */
+.action-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.85); /* Helles, leicht transparentes Weiß */
+    color: #053f3f; /* Dunkelgrün für das Icon */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.action-btn:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Positionierung oben rechts */
+.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+/* Anpassung für die Desktop-Karten-Ansicht */
+@media (min-width: 768px) {
+    .top-right {
+        top: 30px;
+        right: 30px;
+    }
+}
+
+/* =========================================
+   PROFIL BEREICH
+   ========================================= */
+.linktree-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 15px; /* Etwas Abstand zum Share-Button */
+}
+
+.linktree-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.linktree-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    color: white;
+    font-weight: bold;
+}
+
+.linktree-desc {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 90%;
+}
+
+.instagram-icon {
+    color: white;
+    font-size: 1.8rem;
+    margin-top: 15px;
+    transition: transform 0.2s ease;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   LINKS & BUTTONS
+   ========================================= */
+.linktree-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.linktree-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.linktree-btn:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.link-thumbnail {
+    width: 45px;
+    height: 45px;
+    background-color: #084c4c; /* Dunklerer Ton als Platzhalter */
+    border-radius: 8px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 20px; /* Gleicht den Platz des Vorschaubildes aus */
+}
+
+.options-icon {
+    position: absolute;
+    right: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+}
+
+/* =========================================
+   SPOTIFY PODCAST KARTE
+   ========================================= */
+.podcast-card {
+    position: relative;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.podcast-image-placeholder {
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 1 / 1;
+    background-color: #084c4c; /* Dunklerer Ton als Platzhalter */
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.podcast-image-placeholder img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.play-icon {
+    position: relative;
+    z-index: 1;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
+}
+
+.podcast-title {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.podcast-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.podcast-follow-btn {
+    background-color: #0a5c5c;
+    color: white;
+    text-decoration: none;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.podcast-follow-btn:hover {
+    background-color: #074141;
+}
+
+.podcast-options-icon {
+    position: absolute;
+    bottom: 25px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+}
+
+/* =========================================
+   ANIMATIONEN
+   ========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links | Huf und Herz im Takt</title>
+    <link rel="icon" href="./img/logo.png">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="linktree-body">
+
+    <main class="linktree-container">
+        
+        <button id="share-btn" class="action-btn top-right" aria-label="Seite teilen">
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        </button>
+
+        <div class="linktree-profile">
+            <img src="./img/logo.png" alt="Huf und Herz im Takt Logo" class="linktree-logo">
+            <h1 class="linktree-title">Huf und Herz im Takt</h1>
+            <p class="linktree-desc">Pferdetraining neu gedacht: – Rundum-Programm EquiFit mit Sitzschulung, Pulsmessung und mehr! – Onlinekurs "Leichtigkeit im Sattel" für DEINEN perfekten Sitz</p>
+            
+            <a href="https://www.instagram.com/hufundherzimtakt" target="_blank" class="instagram-icon">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+
+        <div class="linktree-links">
+            
+            <div class="podcast-card">
+                <div class="podcast-image-placeholder">
+                    <i class="fa-solid fa-circle-play play-icon"></i>
+                </div>
+                
+                <h2 class="podcast-title">Spotify</h2>
+                <p class="podcast-subtitle">
+                    <i class="fa-solid fa-microphone"></i> Podcast • Greta Heine
+                </p>
+                
+                <a href="#" target="_blank" class="podcast-follow-btn">Follow</a>
+                
+                <i class="fa-solid fa-ellipsis-vertical podcast-options-icon"></i>
+            </div>
+
+            <a href="https://hufundherzimtakt.com/equifit/" target="_blank" class="linktree-btn">
+                <div class="link-thumbnail"></div>
+                <span class="btn-text">EquiFit – dein Rundum-Training (Region Hannover)</span>
+                <i class="fa-solid fa-ellipsis-vertical options-icon"></i>
+            </a>
+
+            <a href="https://hufundherzimtakt.com/sitz-scan/" target="_blank" class="linktree-btn">
+                <div class="link-thumbnail"></div>
+                <span class="btn-text">Der Sitz-Scan – für 0 Euro!</span>
+                <i class="fa-solid fa-ellipsis-vertical options-icon"></i>
+            </a>
+
+            <a href="https://hufundherzimtakt.com/" target="_blank" class="linktree-btn">
+                <div class="link-thumbnail"></div>
+                <span class="btn-text">Meine Webseite</span>
+                <i class="fa-solid fa-ellipsis-vertical options-icon"></i>
+            </a>
+
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('share-btn').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Huf und Herz im Takt',
+                        text: 'Schau dir diese Links von Huf und Herz im Takt an!',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Teilen abgebrochen oder fehlgeschlagen', err);
+                }
+            } else {
+                // Fallback für Browser, die das native Teilen nicht unterstützen
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link wurde in die Zwischenablage kopiert!');
+            }
+        });
+    </script>
+
+</body>
+</html>
