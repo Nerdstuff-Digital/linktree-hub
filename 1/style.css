@@ -1,44 +1,89 @@
 /* =========================================
    BASIS-STYLING (Mobile First / Flache Ansicht)
    ========================================= */
+:root {
+    --main-bg-color: #0C7676; 
+    --dark-bg-color: #053f3f; 
+    --accent-color: #0a5c5c;  
+    --accent-hover: #074141;  
+}
+
 .linktree-body {
-    background-color: #0C7676; /* Standard Hintergrund für Mobile */
+    background-color: var(--main-bg-color);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Zentriert alles vertikal auf dem Handy */
+    justify-content: center;
     min-height: 100vh;
     padding: 30px 15px;
     margin: 0;
-    font-family: sans-serif; /* Ggf. durch deine eigenen Fonts ersetzen */
+    font-family: sans-serif;
     box-sizing: border-box;
 }
 
 .linktree-container {
     width: 100%;
-    max-width: 480px; /* Etwas schmaler für eine elegante Karte */
+    max-width: 480px;
     display: flex;
     flex-direction: column;
     align-items: center;
     animation: fadeIn 0.5s ease-out;
-    position: relative; /* WICHTIG für den Share-Button oben rechts */
+    position: relative;
 }
 
 /* =========================================
-   DESKTOP "KARTEN"-ANSICHT (ab Tablet-Größe)
+   BILD-ICONS STYLING (NEU)
+   ========================================= */
+.custom-icon {
+    /* Kehrt die Farbe um (Schwarz wird zu Weiß) */
+    filter: invert(100%);
+    object-fit: contain;
+    display: block;
+}
+
+/* Der Share Button ist hell, daher machen wir das Icon wieder dunkel */
+.share-icon {
+    width: 22px;
+    height: 22px;
+    filter: invert(0%); /* Bleibt schwarz */
+    opacity: 0.8; /* Leicht abgedunkelt, damit es nicht so aggressiv wirkt */
+}
+
+/* Icons unter dem Namen */
+.profile-icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* Großes Icon in der Video-Karte */
+.featured-main-icon {
+    height: 60px;
+    width: auto;
+    max-width: 80%;
+}
+
+/* Kleine Icons in den Link-Buttons */
+.button-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* =========================================
+   DESKTOP "KARTEN"-ANSICHT
    ========================================= */
 @media (min-width: 768px) {
     .linktree-body {
-        background-color: #053f3f; /* Dunklerer Hintergrund für den edlen Look */
+        background-color: var(--dark-bg-color);
         padding: 60px 20px;
-        justify-content: flex-start; /* Karte startet weiter oben */
+        justify-content: flex-start;
     }
 
     .linktree-container {
-        background-color: #0C7676; /* Helle Karten-Farbe */
+        background-color: var(--main-bg-color);
         padding: 50px 40px;
-        border-radius: 35px; /* Starke Abrundung aus dem Screenshot */
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* Weicher Schatten */
+        border-radius: 35px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     }
 }
 
@@ -47,16 +92,14 @@
    ========================================= */
 .action-btn {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.85); /* Helles, leicht transparentes Weiß */
-    color: #053f3f; /* Dunkelgrün für das Icon */
+    background-color: rgba(255, 255, 255, 0.85);
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.2s ease;
     z-index: 10;
@@ -68,13 +111,11 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Positionierung oben rechts */
 .top-right {
     top: 20px;
     right: 20px;
 }
 
-/* Anpassung für die Desktop-Karten-Ansicht */
 @media (min-width: 768px) {
     .top-right {
         top: 30px;
@@ -91,7 +132,7 @@
     align-items: center;
     text-align: center;
     margin-bottom: 30px;
-    margin-top: 15px; /* Etwas Abstand zum Share-Button */
+    margin-top: 15px;
 }
 
 .linktree-logo {
@@ -99,7 +140,9 @@
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: top;
     margin-bottom: 15px;
+    background-color: rgba(255,255,255,0.2);
 }
 
 .linktree-title {
@@ -118,15 +161,20 @@
     max-width: 90%;
 }
 
-.instagram-icon {
-    color: white;
-    font-size: 1.8rem;
+.social-icons-row {
+    display: flex;
+    gap: 15px;
     margin-top: 15px;
-    transition: transform 0.2s ease;
 }
 
-.instagram-icon:hover {
-    transform: scale(1.1);
+.social-icon {
+    transition: transform 0.2s ease;
+    display: flex; 
+    align-items: center;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
 }
 
 /* =========================================
@@ -160,32 +208,28 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.link-thumbnail {
+.link-icon {
     width: 45px;
     height: 45px;
-    background-color: #084c4c; /* Dunklerer Ton als Platzhalter */
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 8px;
     margin-right: 15px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-text {
     flex-grow: 1;
     text-align: center;
-    padding-right: 20px; /* Gleicht den Platz des Vorschaubildes aus */
-}
-
-.options-icon {
-    position: absolute;
-    right: 15px;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1rem;
+    padding-right: 20px;
 }
 
 /* =========================================
-   SPOTIFY PODCAST KARTE
+   FEATURED / HIGHLIGHT KARTE
    ========================================= */
-.podcast-card {
+.featured-card {
     position: relative;
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.8);
@@ -196,50 +240,30 @@
     align-items: center;
     margin-bottom: 10px;
     box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-.podcast-image-placeholder {
-    position: relative;
+.featured-icon-wrapper {
     width: 100%;
     max-width: 260px;
-    aspect-ratio: 1 / 1;
-    background-color: #084c4c; /* Dunklerer Ton als Platzhalter */
+    aspect-ratio: 16 / 9;
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     margin-bottom: 15px;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 10px;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
-.podcast-image-placeholder img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.play-icon {
-    position: relative;
-    z-index: 1;
-    font-size: 2.5rem;
-    color: rgba(255, 255, 255, 0.9);
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));
-}
-
-.podcast-title {
+.featured-title {
     color: white;
     font-size: 1.1rem;
     font-weight: bold;
     margin: 0 0 5px 0;
 }
 
-.podcast-subtitle {
+.featured-subtitle {
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.85rem;
     margin: 0 0 15px 0;
@@ -248,27 +272,19 @@
     gap: 5px;
 }
 
-.podcast-follow-btn {
-    background-color: #0a5c5c;
+.featured-action-btn {
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
-    padding: 6px 20px;
+    padding: 8px 24px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: bold;
     transition: background-color 0.2s ease;
 }
 
-.podcast-follow-btn:hover {
-    background-color: #074141;
-}
-
-.podcast-options-icon {
-    position: absolute;
-    bottom: 25px;
-    right: 20px;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1rem;
+.featured-action-btn:hover {
+    background-color: var(--accent-hover);
 }
 
 /* =========================================
@@ -277,4 +293,33 @@
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+.legal-footer {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.legal-footer:hover {
+    opacity: 0.9;
+}
+
+.legal-footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.legal-footer a:hover {
+    text-decoration: underline;
+}
+
+.legal-footer span {
+    cursor: default;
 }

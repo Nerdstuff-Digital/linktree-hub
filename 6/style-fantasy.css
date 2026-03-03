@@ -1,0 +1,229 @@
+/* =========================================
+   TEMPLATE 6: FANTASY / MYSTIC RPG
+   ========================================= */
+:root {
+    --bg-color: #110c1c;       /* Sehr dunkles Violett/Nachtblau */
+    --gold-main: #d4af37;      /* Antikes Gold */
+    --gold-dim: #8a7324;
+    --text-light: #f0ead6;     /* Pergament-artiges Weiß */
+    --card-bg: rgba(20, 15, 30, 0.8);
+}
+
+body {
+    background-color: var(--bg-color);
+    /* Ein sanfter, radialer Glow im Hintergrund (wie eine Lichtquelle im Dunkeln) */
+    background-image: radial-gradient(circle at center 30%, #2b1d44 0%, #110c1c 80%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 50px 20px;
+    margin: 0;
+    /* Klassische Serifen-Schriftart für den Buch-/Fantasy-Look */
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    box-sizing: border-box;
+    color: var(--text-light);
+}
+
+.linktree-container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInMystic 1s ease-in-out;
+    position: relative;
+}
+
+/* =========================================
+   BILD-ICONS STYLING (Golden gefärbt via CSS)
+   ========================================= */
+.custom-icon {
+    object-fit: contain;
+    display: block;
+    /* Macht die schwarzen Icons erst weiß (invert), dann sepia, dann gelb/gold */
+    filter: invert(75%) sepia(40%) saturate(600%) hue-rotate(5deg) brightness(95%) contrast(85%);
+}
+
+/* =========================================
+   AKTION BUTTON (SHARE)
+   ========================================= */
+.action-btn {
+    position: absolute;
+    background: transparent;
+    border: 1px solid var(--gold-dim);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+.action-btn:hover {
+    border-color: var(--gold-main);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4), inset 0 0 10px rgba(212, 175, 55, 0.2);
+    transform: rotate(180deg); /* Mystische Drehung */
+}
+
+.share-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.top-right {
+    top: 0px;
+    right: 0px;
+}
+
+/* =========================================
+   PROFIL BEREICH
+   ========================================= */
+.linktree-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 35px;
+    margin-top: 15px;
+}
+
+/* Ein aufwendigerer Rahmen für das Profilbild */
+.avatar-frame {
+    padding: 4px;
+    border: 2px solid var(--gold-dim);
+    border-radius: 50%;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    transition: all 0.4s ease;
+}
+
+.avatar-frame:hover {
+    border-color: var(--gold-main);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+.linktree-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.linktree-title {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    font-weight: normal; /* Serifen sehen in Normalgewicht oft eleganter aus */
+    color: var(--gold-main);
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.linktree-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 90%;
+    color: var(--text-light);
+    font-style: italic; /* Etwas poetischer */
+}
+
+/* =========================================
+   LINKS & BUTTONS
+   ========================================= */
+.linktree-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.linktree-btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 12px 15px;
+    /* Ein eleganter Doppelrahmen, der an alte Verzierungen erinnert */
+    border: 3px double var(--gold-dim);
+    border-radius: 4px;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.linktree-btn:hover {
+    border-color: var(--gold-main);
+    background-color: rgba(30, 22, 45, 0.9);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    transform: scale(1.02);
+}
+
+.link-icon {
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-left: 5px;
+    flex-shrink: 0;
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 50px; 
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   ANIMATIONEN
+   ========================================= */
+@keyframes fadeInMystic {
+    from { opacity: 0; filter: blur(10px); }
+    to { opacity: 1; filter: blur(0); }
+}
+
+.legal-footer {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.legal-footer:hover {
+    opacity: 0.9;
+}
+
+.legal-footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.legal-footer a:hover {
+    text-decoration: underline;
+}
+
+.legal-footer span {
+    cursor: default;
+}

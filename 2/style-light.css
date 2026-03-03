@@ -1,0 +1,344 @@
+/* =========================================
+   TEMPLATE 2: MODERN LIGHT & FRIENDLY
+   ========================================= */
+:root {
+    /* Ein weicher, moderner Farbverlauf für den Hintergrund */
+    --bg-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    --card-bg: #ffffff;
+    --text-dark: #2d3436;
+    --text-muted: #636e72;
+    --accent-color: #ff7675; /* Ein warmer Lachs/Pfirsich-Ton für Akzente */
+    --accent-hover: #d63031;
+    --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    background-image: var(--bg-gradient);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 30px 15px;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    color: var(--text-dark);
+}
+
+.linktree-container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+/* =========================================
+   BILD-ICONS STYLING (Schwarz auf Weiß)
+   ========================================= */
+.custom-icon {
+    object-fit: contain;
+    display: block;
+    /* Wir machen die schwarzen Icons etwas weicher (dunkelgrau), das sieht edler aus */
+    opacity: 0.75; 
+}
+
+.share-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.profile-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.button-icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* =========================================
+   DESKTOP "KARTEN"-ANSICHT
+   ========================================= */
+@media (min-width: 768px) {
+    body {
+        /* Auf Desktop ein etwas intensiverer Pastell-Gradient außenrum */
+        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 60px 20px;
+        justify-content: flex-start;
+    }
+
+    .linktree-container {
+        background-color: transparent; /* Wir lassen den Gradienten durchscheinen */
+        padding: 40px 20px;
+    }
+}
+
+/* =========================================
+   AKTION BUTTONS (SHARE)
+   ========================================= */
+.action-btn {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: var(--shadow-soft);
+}
+
+.action-btn:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+@media (min-width: 768px) {
+    .top-right {
+        top: 20px;
+        right: 20px;
+    }
+}
+
+/* =========================================
+   PROFIL BEREICH
+   ========================================= */
+.linktree-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 35px;
+    margin-top: 20px;
+}
+
+/* Neuer, eleganter Rahmen für das Profilbild */
+.profile-image-wrapper {
+    padding: 5px;
+    background-color: var(--card-bg);
+    border-radius: 50%;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 15px;
+}
+
+.linktree-logo {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.linktree-title {
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    font-weight: 800;
+}
+
+.linktree-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 90%;
+}
+
+/* Social Icons in kleinen weißen Kreisen */
+.social-icons-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.social-icon {
+    width: 46px;
+    height: 46px;
+    background-color: var(--card-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-soft);
+}
+
+.social-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* =========================================
+   LINKS & BUTTONS (PILLEN-FORM)
+   ========================================= */
+.linktree-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Etwas mehr Abstand für den luftigen Look */
+}
+
+.linktree-btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 50px; /* Macht die Buttons komplett rund an den Seiten */
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-soft);
+    border: 2px solid transparent;
+}
+
+.linktree-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(0,0,0,0.03); /* Minimaler Rahmeneffekt beim Hovern */
+}
+
+.link-icon {
+    width: 42px;
+    height: 42px;
+    background-color: #f1f2f6; /* Ganz leichtes Grau als Hintergrund fürs Icon */
+    border-radius: 50%; /* Icon-Hintergrund jetzt auch rund */
+    margin-right: 15px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 57px; /* Gleicht den runden Button links aus */
+}
+
+/* =========================================
+   FEATURED / HIGHLIGHT KARTE
+   ========================================= */
+.featured-card {
+    width: 100%;
+    background-color: var(--card-bg);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Sorgt dafür, dass alles in der runden Karte bleibt */
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+}
+
+.featured-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+/* Der obere Teil der Karte (heller Hintergrund für das Icon) */
+.featured-image-top {
+    width: 100%;
+    height: 120px;
+    background-color: #ffeaa7; /* Sanftes Gelb/Pfirsich als Eyecatcher */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-main-icon {
+    height: 50px;
+    opacity: 0.8;
+}
+
+.featured-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+}
+
+.featured-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0 0 20px 0;
+}
+
+.featured-action-btn {
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    width: 80%;
+    text-align: center;
+}
+
+.featured-action-btn:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* =========================================
+   ANIMATIONEN
+   ========================================= */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.legal-footer {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.legal-footer:hover {
+    opacity: 0.9;
+}
+
+.legal-footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.legal-footer a:hover {
+    text-decoration: underline;
+}
+
+.legal-footer span {
+    cursor: default;
+}

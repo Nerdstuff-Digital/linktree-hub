@@ -1,0 +1,252 @@
+/* =========================================
+   TEMPLATE 4: NEON CYBERPUNK
+   ========================================= */
+:root {
+    --bg-color: #050508;       /* Extrem dunkles Blau/Schwarz */
+    --text-main: #ffffff;
+    --text-muted: #8e9099;
+    --neon-cyan: #00f3ff;      /* Knalliges Cyber-Blau */
+    --neon-magenta: #ff00ff;   /* Neon Pink */
+    --border-thickness: 2px;
+}
+
+body {
+    background-color: var(--bg-color);
+    /* Subtiles Raster im Hintergrund für den Tech-Look */
+    background-image: 
+        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 50px 20px;
+    margin: 0;
+    /* Kantige System-Schrift */
+    font-family: "Courier New", Courier, monospace;
+    box-sizing: border-box;
+    color: var(--text-main);
+}
+
+.linktree-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: glitch-in 0.4s ease-out forwards;
+    position: relative;
+}
+
+/* =========================================
+   BILD-ICONS STYLING
+   ========================================= */
+.custom-icon {
+    object-fit: contain;
+    display: block;
+    filter: invert(100%); /* Weiße Icons */
+}
+
+/* =========================================
+   AKTION BUTTON (SHARE)
+   ========================================= */
+.action-btn {
+    position: absolute;
+    background: transparent;
+    border: var(--border-thickness) solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+    padding: 8px;
+    /* Scharfe Ecken */
+    border-radius: 0; 
+    box-shadow: 0 0 5px var(--neon-cyan), inset 0 0 5px var(--neon-cyan);
+}
+
+.action-btn:hover {
+    background-color: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan), inset 0 0 10px var(--neon-cyan);
+}
+
+.action-btn:hover .share-icon {
+    /* Beim Hover wird das Icon schwarz, da der Kasten cyan leuchtet */
+    filter: invert(0%); 
+}
+
+.share-icon {
+    width: 18px;
+    height: 18px;
+    transition: filter 0.2s ease;
+}
+
+.top-right {
+    top: 0px;
+    right: 0px;
+}
+
+/* =========================================
+   PROFIL BEREICH
+   ========================================= */
+.linktree-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 45px;
+    margin-top: 15px;
+}
+
+.linktree-logo {
+    width: 95px;
+    height: 95px;
+    /* Scharfe Ecken statt rund! */
+    border-radius: 0; 
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 25px;
+    border: var(--border-thickness) solid var(--neon-magenta);
+    box-shadow: 5px 5px 0px rgba(255, 0, 255, 0.4); /* Versetzter Cyber-Schatten */
+    transition: all 0.3s ease;
+}
+
+.linktree-logo:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px var(--neon-magenta);
+}
+
+.linktree-title {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px var(--neon-cyan); /* Leuchtender Text */
+}
+
+.linktree-desc {
+    color: var(--neon-cyan);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 90%;
+    /* Sieht aus wie ein Terminal-Output */
+    border-left: 3px solid var(--neon-cyan); 
+    padding-left: 10px;
+    text-align: left;
+}
+
+/* =========================================
+   LINKS & BUTTONS
+   ========================================= */
+.linktree-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.linktree-btn {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 243, 255, 0.05); /* Sehr leichtes Cyan im Hintergrund */
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 10px 15px;
+    border: var(--border-thickness) solid var(--neon-cyan);
+    border-radius: 0; /* Kantig */
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Der leuchtende Schatten um die Buttons */
+.linktree-btn {
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.2);
+}
+
+.linktree-btn:hover {
+    background-color: rgba(0, 243, 255, 0.15);
+    box-shadow: 0 0 15px var(--neon-cyan), inset 0 0 10px var(--neon-cyan);
+    text-shadow: 0 0 5px var(--text-main);
+    transform: scale(1.02);
+}
+
+/* Kleiner Design-Akzent links am Button */
+.linktree-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: var(--neon-cyan);
+}
+
+.linktree-btn:hover::before {
+    background-color: var(--neon-magenta);
+}
+
+.link-icon {
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.button-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   ANIMATIONEN
+   ========================================= */
+@keyframes glitch-in {
+    0% { opacity: 0; transform: scale(0.95) skewX(5deg); }
+    50% { opacity: 0.5; transform: scale(1.02) skewX(-5deg); filter: hue-rotate(90deg); }
+    100% { opacity: 1; transform: scale(1) skewX(0); filter: hue-rotate(0deg); }
+}
+
+.legal-footer {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.legal-footer:hover {
+    opacity: 0.9;
+}
+
+.legal-footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.legal-footer a:hover {
+    text-decoration: underline;
+}
+
+.legal-footer span {
+    cursor: default;
+}

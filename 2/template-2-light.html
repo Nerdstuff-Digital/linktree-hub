@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links | Dein Name (Light Theme)</title>
+    <link rel="icon" href="../img/favicon.png">
+    
+    <link rel="stylesheet" href="style-light.css">
+</head>
+
+<body class="linktree-body">
+
+    <main class="linktree-container">
+        
+        <button id="share-btn" class="action-btn top-right" aria-label="Seite teilen">
+            <img src="../icons/share.png" alt="Teilen" class="custom-icon share-icon">
+        </button>
+
+        <div class="linktree-profile">
+            <div class="profile-image-wrapper">
+                <img src="../img/logo.jpg" alt="Profilbild" class="linktree-logo">
+            </div>
+            <h1 class="linktree-title">Dein Name</h1>
+            <p class="linktree-desc">Kurze, knackige Beschreibung über dich. Was machst du? Warum sollten Leute dir folgen? ✨</p>
+            
+            <div class="social-icons-row">
+                <a href="#" target="_blank" class="social-icon">
+                    <img src="../icons/insta.png" alt="Instagram" class="custom-icon profile-icon">
+                </a>
+                <a href="#" target="_blank" class="social-icon">
+                    <img src="../icons/tiktok.png" alt="TikTok" class="custom-icon profile-icon">
+                </a>
+                <a href="mailto:deine@email.de" class="social-icon">
+                    <img src="../icons/mail.png" alt="E-Mail" class="custom-icon profile-icon">
+                </a>
+            </div>
+        </div>
+
+        <div class="linktree-links">
+            
+            <div class="featured-card">
+                <div class="featured-image-top">
+                    <img src="../icons/youtube.png" alt="YouTube" class="custom-icon featured-main-icon">
+                </div>
+                <div class="featured-content">
+                    <h2 class="featured-title">Neuestes Video</h2>
+                    <p class="featured-subtitle">YouTube • Titel des Videos</p>
+                    <a href="#" target="_blank" class="featured-action-btn">Jetzt ansehen</a>
+                </div>
+            </div >
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon">
+                    <img src="../icons/website.png" alt="Webseite" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">Meine Webseite</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon">
+                    <img src="../icons/insta.png" alt="Instagram" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">Instagram (@dein_name)</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon">
+                    <img src="../icons/tiktok.png" alt="TikTok" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">TikTok</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon">
+                    <img src="../icons/cafe.png" alt="Kaffeekasse" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">Kaffeekasse (Ko-fi)</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon">
+                    <img src="../icons/amazon.png" alt="Amazon Wunschliste" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">Meine Amazon Wunschliste</span>
+            </a>
+
+        </div>
+        
+        <footer class="legal-footer">
+            <a href="../impressum.html">Impressum</a>
+            <span>|</span>
+            <a href="../datenschutz.html">Datenschutz</a>
+        </footer>
+        
+    </main>
+
+    <script>
+        document.getElementById('share-btn').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Meine Links',
+                        text: 'Schau dir meine aktuellen Links an!',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Teilen abgebrochen oder fehlgeschlagen', err);
+                }
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link wurde in die Zwischenablage kopiert!');
+            }
+        });
+    </script>
+
+</body>
+</html>

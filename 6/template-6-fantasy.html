@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links | Dein Name (Fantasy/RPG)</title>
+    <link rel="icon" href="../img/favicon.png">
+    
+    <link rel="stylesheet" href="style-fantasy.css">
+</head>
+
+<body class="linktree-body">
+
+    <main class="linktree-container">
+        
+        <button id="share-btn" class="action-btn top-right" aria-label="Seite teilen">
+            <img src="../icons/share.png" alt="Teilen" class="custom-icon share-icon">
+        </button>
+
+        <div class="linktree-profile">
+            <div class="avatar-frame">
+                <img src="../img/logo.jpg" alt="Profilbild" class="linktree-logo">
+            </div>
+            <h1 class="linktree-title">Dein Name</h1>
+            <p class="linktree-desc">"Tritt ein, Reisender." ✨ Dungeon Master, Weltenbauer & Autor epischer Sagen.</p>
+        </div>
+
+        <div class="linktree-links">
+            
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon">
+                    <img src="../icons/website.png" alt="Webseite" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">Meine Taverne (Webseite)</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon">
+                    <img src="../icons/insta.png" alt="Instagram" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">Bilderkloster (Instagram)</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon">
+                    <img src="../icons/tiktok.png" alt="TikTok" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">Barden-Gesang (TikTok)</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon">
+                    <img src="../icons/cafe.png" alt="Kaffeekasse" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">Spende einen Heiltrank (Ko-fi)</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn">
+                <div class="link-icon">
+                    <img src="../icons/amazon.png" alt="Amazon Wunschliste" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">Gaben der Götter (Wunschliste)</span>
+            </a>
+
+        </div>
+
+        <footer class="legal-footer">
+            <a href="../impressum.html">Impressum</a>
+            <span>|</span>
+            <a href="../datenschutz.html">Datenschutz</a>
+        </footer>
+
+    </main>
+
+    <script>
+        document.getElementById('share-btn').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Meine Links',
+                        text: 'Schau dir meine aktuellen Links an!',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Teilen abgebrochen oder fehlgeschlagen', err);
+                }
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link wurde in die Zwischenablage kopiert!');
+            }
+        });
+    </script>
+
+</body>
+</html>
