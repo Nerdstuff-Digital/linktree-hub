@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Links | Dein Name (Terminal)</title>
+    <link rel="icon" href="../img/favicon.png">
+    <link rel="stylesheet" href="style-hacker.css">
+</head>
+<body class="linktree-body crt-screen">
+
+    <main class="linktree-container">
+        
+        <a href="../index.html" class="action-btn top-left" aria-label="Zurück zur Übersicht">
+            <img src="../icons/zuruck-pfeil.png" alt="Zurück" class="custom-icon back-icon icon-green">
+        </a>
+
+        <button id="share-btn" class="action-btn top-right" aria-label="Seite teilen">
+            <img src="../icons/share.png" alt="Teilen" class="custom-icon share-icon icon-green">
+        </button>
+
+        <div class="linktree-profile">
+            <div class="terminal-avatar-box">
+                <img src="../img/logo.jpg" alt="Profilbild" class="linktree-logo">
+            </div>
+            <h1 class="linktree-title">root@dev:~# <span class="cursor">_</span></h1>
+            <p class="linktree-desc">> Executing profile.sh... <br>> Cybersecurity, Coding Tutorials & Linux Setups. Hack the planet!</p>
+            
+            <div class="social-icons-row">
+                <a href="#" target="_blank" class="social-icon">
+                    <img src="../icons/youtube.png" alt="YouTube" class="custom-icon profile-icon icon-green">
+                </a>
+                <a href="#" target="_blank" class="social-icon">
+                    <img src="../icons/insta.png" alt="Instagram" class="custom-icon profile-icon icon-green">
+                </a>
+                <a href="#" target="_blank" class="social-icon">
+                    <img src="../icons/tiktok.png" alt="TikTok" class="custom-icon profile-icon icon-green">
+                </a>
+            </div>
+        </div>
+
+        <div class="linktree-links">
+            
+            <a href="#" target="_blank" class="linktree-btn cmd-btn">
+                <div class="link-icon">
+                    <img src="../icons/youtube.png" alt="YouTube" class="custom-icon button-icon icon-green">
+                </div>
+                <span class="btn-text">./play_latest_video.sh</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn cmd-btn">
+                <div class="link-icon">
+                    <img src="../icons/website.png" alt="GitHub" class="custom-icon button-icon icon-green">
+                </div>
+                <span class="btn-text">git clone my_projects</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn cmd-btn">
+                <div class="link-icon">
+                    <img src="../icons/insta.png" alt="Instagram" class="custom-icon button-icon icon-green">
+                </div>
+                <span class="btn-text">cat /var/log/instagram.log</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn cmd-btn">
+                <div class="link-icon">
+                    <img src="../icons/tiktok.png" alt="TikTok" class="custom-icon button-icon icon-green">
+                </div>
+                <span class="btn-text">tail -f tiktok_feed</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn cmd-btn">
+                <div class="link-icon">
+                    <img src="../icons/cafe.png" alt="Kaffee" class="custom-icon button-icon icon-green">
+                </div>
+                <span class="btn-text">sudo apt-get install coffee</span>
+            </a>
+
+        </div>
+        
+        <footer class="legal-footer">
+            <a href="../impressum.html">Impressum</a>
+            <span>|</span>
+            <a href="../datenschutz.html">Datenschutz</a>
+        </footer>
+        
+    </main>
+
+    <script>
+        document.getElementById('share-btn').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Terminal Links',
+                        text: 'Schau dir meine neuesten Tech-Videos und Repositories an!',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Teilen abgebrochen oder fehlgeschlagen', err);
+                }
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link wurde in die Zwischenablage kopiert!');
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,8 +1,4 @@
-/* =========================================
-   TEMPLATE 5: COSPLAY / GLASSMORPHISM
-   ========================================= */
 :root {
-    /* Ein verträumter, pastelliger Farbverlauf (Pink/Lila/Blau) */
     --color-1: #ffb8d1;
     --color-2: #e2b0ff;
     --color-3: #9fb8ff;
@@ -13,7 +9,6 @@
 }
 
 body {
-    /* Animierter Hintergrund-Gradient */
     background: linear-gradient(-45deg, var(--color-1), var(--color-2), var(--color-3));
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
@@ -22,10 +17,9 @@ body {
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    padding: 50px 20px;
+    padding: 0;
     margin: 0;
-    /* Runde, freundliche Schriftart */
-    font-family: 'Quicksand', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Quicksand', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     box-sizing: border-box;
     color: var(--text-main);
 }
@@ -44,21 +38,32 @@ body {
     align-items: center;
     animation: floatIn 0.6s ease-out;
     position: relative;
+    padding: 50px 20px;
+    box-sizing: border-box;
 }
 
-/* =========================================
-   BILD-ICONS STYLING
-   ========================================= */
+@media (min-width: 768px) {
+    body {
+        justify-content: center;
+        padding: 40px 20px;
+    }
+    .linktree-container {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        padding: 40px 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+}
+
 .custom-icon {
     object-fit: contain;
     display: block;
-    filter: invert(50%); /* Weiße Icons */
-    opacity: 0.9;
+    filter: invert(100%);
 }
 
-/* =========================================
-   AKTION BUTTON (SHARE)
-   ========================================= */
 .action-btn {
     position: absolute;
     background: var(--glass-bg);
@@ -75,6 +80,7 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: var(--glass-shadow);
+    text-decoration: none;
 }
 
 .action-btn:hover {
@@ -82,26 +88,28 @@ body {
     transform: scale(1.1) rotate(5deg);
 }
 
-.share-icon {
+.share-icon, .back-icon {
     width: 20px;
     height: 20px;
 }
 
 .top-right {
-    top: 0px;
-    right: 0px;
+    top: 15px;
+    right: 15px;
 }
 
-/* =========================================
-   PROFIL BEREICH
-   ========================================= */
+.top-left {
+    top: 15px;
+    left: 15px;
+}
+
 .linktree-profile {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin-bottom: 35px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .linktree-logo {
@@ -111,7 +119,6 @@ body {
     object-fit: cover;
     object-position: top;
     margin-bottom: 15px;
-    /* Sanftes Glühen um das Bild */
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     border: 3px solid rgba(255, 255, 255, 0.8);
 }
@@ -132,9 +139,38 @@ body {
     text-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* =========================================
-   LINKS & BUTTONS (GLASSMORPHISM)
-   ========================================= */
+.social-icons-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: var(--glass-shadow);
+}
+
+.social-icon:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+}
+
+.profile-icon {
+    width: 20px;
+    height: 20px;
+}
+
 .linktree-links {
     width: 100%;
     display: flex;
@@ -152,7 +188,7 @@ body {
     color: var(--text-main);
     text-decoration: none;
     padding: 10px 15px;
-    border-radius: 16px; /* Moderne, sanfte Rundung */
+    border-radius: 16px;
     font-size: 1.05rem;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -185,13 +221,10 @@ body {
 .btn-text {
     flex-grow: 1;
     text-align: center;
-    padding-right: 53px; /* Symmetrie-Ausgleich */
+    padding-right: 53px;
     text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-/* =========================================
-   ANIMATIONEN
-   ========================================= */
 @keyframes floatIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }

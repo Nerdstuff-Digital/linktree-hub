@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klemmbaustein Fan-Links | Dein Name (Bricks Theme)</title>
+    <link rel="icon" href="../img/favicon.png">
+    <link rel="stylesheet" href="style-bricks.css">
+</head>
+<body class="linktree-body">
+
+    <main class="linktree-container">
+        
+        <a href="../index.html" class="action-btn top-left stud-btn-yellow" aria-label="Zurück zur Übersicht">
+            <img src="../icons/zuruck-pfeil.png" alt="Zurück" class="custom-icon back-icon icon-black">
+        </a>
+
+        <button id="share-btn" class="action-btn top-right stud-btn-yellow" aria-label="Seite teilen">
+            <img src="../icons/share.png" alt="Teilen" class="custom-icon share-icon icon-black">
+        </button>
+
+        <div class="linktree-profile">
+            <div class="profile-image-frame">
+                <img src="../img/logo.jpg" alt="Profilbild" class="linktree-logo">
+            </div>
+            <h1 class="linktree-title">Dein Klemmbaustein-Kanal</h1>
+            <p class="linktree-desc">Steine, Noppen & kreative MOCs. Bauen ist meine Leidenschaft! Jeden Sonntag ein neues Review. 🧱✨</p>
+            
+            <div class="social-icons-row">
+                <a href="#" target="_blank" class="social-icon social-icon-red">
+                    <img src="../icons/youtube.png" alt="YouTube" class="custom-icon profile-icon icon-white">
+                </a>
+                <a href="#" target="_blank" class="social-icon social-icon-blue">
+                    <img src="../icons/insta.png" alt="Instagram" class="custom-icon profile-icon icon-white">
+                </a>
+                <a href="#" target="_blank" class="social-icon social-icon-green">
+                    <img src="../icons/tiktok.png" alt="TikTok" class="custom-icon profile-icon icon-white">
+                </a>
+            </div>
+        </div>
+
+        <div class="linktree-links">
+            
+            <a href="#" target="_blank" class="linktree-btn brick-red">
+                <div class="link-icon bg-white-stud">
+                    <img src="../icons/youtube.png" alt="YouTube" class="custom-icon button-icon icon-black">
+                </div>
+                <span class="btn-text">Neuestes Review-Video</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn brick-blue">
+                <div class="link-icon bg-white-stud">
+                    <img src="../icons/insta.png" alt="Instagram" class="custom-icon button-icon icon-black">
+                </div>
+                <span class="btn-text">Bilder meiner MOCs (@dein_name)</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn brick-yellow">
+                <div class="link-icon bg-white-stud">
+                    <img src="../icons/website.png" alt="Mein Blog" class="custom-icon button-icon icon-black">
+                </div>
+                <span class="btn-text">Mein Blog & Bauanleitungen</span>
+            </a>
+
+            <div class="affiliate-section">
+                <h2 class="section-title">Support & Günstige Steine</h2>
+                
+                <a href="#" target="_blank" class="affiliate-btn brick-green">
+                    <div class="affiliate-content">
+                        <img src="../icons/affiliate.svg" alt="Affiliate Link" class="custom-icon affiliate-icon icon-white">
+                        <div class="affiliate-text">
+                            <span class="aff-title">Günstige Basis-Steine Box</span>
+                            <span class="aff-desc">(Affiliate Link - Amazon DE)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="affiliate-btn brick-green">
+                    <div class="affiliate-content">
+                        <img src="../icons/affiliate.svg" alt="Affiliate Link" class="custom-icon affiliate-icon icon-white">
+                        <div class="affiliate-text">
+                            <span class="aff-title">MOC-Teileliste (Günstiger Store)</span>
+                            <span class="aff-desc">(Affiliate Link - Steine-Shop)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="affiliate-btn brick-green">
+                    <div class="affiliate-content">
+                        <img src="../icons/affiliate.svg" alt="Affiliate Link" class="custom-icon affiliate-icon icon-white">
+                        <div class="affiliate-text">
+                            <span class="aff-title">Set-Empfehlung der Woche</span>
+                            <span class="aff-desc">(Affiliate Link - Verschiedene Anbieter)</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        
+        <footer class="legal-footer">
+            <a href="../impressum.html">Impressum</a>
+            <span>|</span>
+            <a href="../datenschutz.html">Datenschutz</a>
+        </footer>
+        
+    </main>
+
+    <script>
+        document.getElementById('share-btn').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Meine Klemmbaustein-Links',
+                        text: 'Schau dir meine aktuellen Reviews und Bauanleitungen an!',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Teilen abgebrochen oder fehlgeschlagen', err);
+                }
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link wurde in die Zwischenablage kopiert!');
+            }
+        });
+    </script>
+
+</body>
+</html>

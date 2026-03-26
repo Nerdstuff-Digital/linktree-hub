@@ -1,13 +1,9 @@
-/* =========================================
-   TEMPLATE 2: MODERN LIGHT & FRIENDLY
-   ========================================= */
 :root {
-    /* Ein weicher, moderner Farbverlauf für den Hintergrund */
     --bg-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     --card-bg: #ffffff;
     --text-dark: #2d3436;
     --text-muted: #636e72;
-    --accent-color: #ff7675; /* Ein warmer Lachs/Pfirsich-Ton für Akzente */
+    --accent-color: #ff7675;
     --accent-hover: #d63031;
     --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.06);
     --shadow-hover: 0 12px 25px rgba(0, 0, 0, 0.12);
@@ -21,9 +17,9 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 30px 15px;
+    padding: 0;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
     color: var(--text-dark);
 }
@@ -36,19 +32,31 @@ body {
     align-items: center;
     animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
+    padding: 30px 15px;
+    box-sizing: border-box;
 }
 
-/* =========================================
-   BILD-ICONS STYLING (Schwarz auf Weiß)
-   ========================================= */
+@media (min-width: 768px) {
+    body {
+        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 60px 20px;
+    }
+
+    .linktree-container {
+        background-color: var(--card-bg);
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 50px 30px;
+    }
+}
+
 .custom-icon {
     object-fit: contain;
     display: block;
-    /* Wir machen die schwarzen Icons etwas weicher (dunkelgrau), das sieht edler aus */
-    opacity: 0.75; 
+    opacity: 0.75;
 }
 
-.share-icon {
+.share-icon, .back-icon {
     width: 20px;
     height: 20px;
 }
@@ -63,26 +71,6 @@ body {
     height: 22px;
 }
 
-/* =========================================
-   DESKTOP "KARTEN"-ANSICHT
-   ========================================= */
-@media (min-width: 768px) {
-    body {
-        /* Auf Desktop ein etwas intensiverer Pastell-Gradient außenrum */
-        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        padding: 60px 20px;
-        justify-content: flex-start;
-    }
-
-    .linktree-container {
-        background-color: transparent; /* Wir lassen den Gradienten durchscheinen */
-        padding: 40px 20px;
-    }
-}
-
-/* =========================================
-   AKTION BUTTONS (SHARE)
-   ========================================= */
 .action-btn {
     position: absolute;
     width: 44px;
@@ -97,6 +85,7 @@ body {
     transition: all 0.3s ease;
     z-index: 10;
     box-shadow: var(--shadow-soft);
+    text-decoration: none;
 }
 
 .action-btn:hover {
@@ -105,20 +94,15 @@ body {
 }
 
 .top-right {
-    top: 10px;
-    right: 10px;
+    top: 25px;
+    right: 25px;
 }
 
-@media (min-width: 768px) {
-    .top-right {
-        top: 20px;
-        right: 20px;
-    }
+.top-left {
+    top: 25px;
+    left: 25px;
 }
 
-/* =========================================
-   PROFIL BEREICH
-   ========================================= */
 .linktree-profile {
     display: flex;
     flex-direction: column;
@@ -128,7 +112,6 @@ body {
     margin-top: 20px;
 }
 
-/* Neuer, eleganter Rahmen für das Profilbild */
 .profile-image-wrapper {
     padding: 5px;
     background-color: var(--card-bg);
@@ -161,7 +144,6 @@ body {
     max-width: 90%;
 }
 
-/* Social Icons in kleinen weißen Kreisen */
 .social-icons-row {
     display: flex;
     gap: 12px;
@@ -185,14 +167,11 @@ body {
     box-shadow: var(--shadow-hover);
 }
 
-/* =========================================
-   LINKS & BUTTONS (PILLEN-FORM)
-   ========================================= */
 .linktree-links {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Etwas mehr Abstand für den luftigen Look */
+    gap: 16px;
 }
 
 .linktree-btn {
@@ -202,7 +181,7 @@ body {
     color: var(--text-dark);
     text-decoration: none;
     padding: 8px 12px;
-    border-radius: 50px; /* Macht die Buttons komplett rund an den Seiten */
+    border-radius: 50px;
     font-size: 1.05rem;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -213,14 +192,14 @@ body {
 .linktree-btn:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
-    border-color: rgba(0,0,0,0.03); /* Minimaler Rahmeneffekt beim Hovern */
+    border-color: rgba(0,0,0,0.03);
 }
 
 .link-icon {
     width: 42px;
     height: 42px;
-    background-color: #f1f2f6; /* Ganz leichtes Grau als Hintergrund fürs Icon */
-    border-radius: 50%; /* Icon-Hintergrund jetzt auch rund */
+    background-color: #f1f2f6;
+    border-radius: 50%;
     margin-right: 15px;
     flex-shrink: 0;
     display: flex;
@@ -231,19 +210,16 @@ body {
 .btn-text {
     flex-grow: 1;
     text-align: center;
-    padding-right: 57px; /* Gleicht den runden Button links aus */
+    padding-right: 57px;
 }
 
-/* =========================================
-   FEATURED / HIGHLIGHT KARTE
-   ========================================= */
 .featured-card {
     width: 100%;
     background-color: var(--card-bg);
     border-radius: 24px;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Sorgt dafür, dass alles in der runden Karte bleibt */
+    overflow: hidden;
     margin-bottom: 10px;
     box-shadow: var(--shadow-soft);
     transition: all 0.3s ease;
@@ -254,11 +230,10 @@ body {
     transform: translateY(-2px);
 }
 
-/* Der obere Teil der Karte (heller Hintergrund für das Icon) */
 .featured-image-top {
     width: 100%;
     height: 120px;
-    background-color: #ffeaa7; /* Sanftes Gelb/Pfirsich als Eyecatcher */
+    background-color: #ffeaa7;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -290,7 +265,7 @@ body {
 
 .featured-action-btn {
     background-color: var(--accent-color);
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     padding: 12px 30px;
     border-radius: 30px;
@@ -306,9 +281,6 @@ body {
     transform: scale(1.05);
 }
 
-/* =========================================
-   ANIMATIONEN
-   ========================================= */
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }

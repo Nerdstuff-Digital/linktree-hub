@@ -1,14 +1,21 @@
 :root {
-    --bg-main: #f4f4f9;
-    --text-dark: #333333;
-    --card-bg: #ffffff;
-    --card-hover-bg: #f0f0f0;
+    --bg-main: #262629;
+    --text-light: #ffffff;
+    --text-muted: #aaaaaa;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.05);
+    --card-hover-bg: rgba(255, 255, 255, 0.06);
+    --card-hover-border: rgba(255, 255, 255, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #262629;
-    color: var(--text-dark);
+    background-color: var(--bg-main);
+    color: var(--text-light);
     margin: 0;
     padding: 40px 20px;
     display: flex;
@@ -25,13 +32,13 @@ header {
 h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: white;
+    color: var(--text-light);
     font-weight: 700;
 }
 
 header p {
     font-size: 1.1rem;
-    color: white;
+    color: var(--text-light);
     margin: 0;
     line-height: 1.5;
 }
@@ -42,6 +49,7 @@ header p {
     gap: 25px;
     width: 100%;
     max-width: 1000px;
+    margin-bottom: 40px;
 }
 
 .card {
@@ -50,8 +58,7 @@ header p {
     padding: 20px;
     text-decoration: none;
     color: inherit;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-    border: 1px solid transparent;
+    border: 1px solid var(--card-border);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -62,8 +69,8 @@ header p {
 .card:hover {
     transform: translateY(-5px);
     background-color: var(--card-hover-bg);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    border-color: #e0e0e0;
+    border-color: var(--card-hover-border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .preview {
@@ -73,7 +80,6 @@ header p {
     margin-bottom: 20px;
     overflow: hidden; 
     position: relative;
-    border: 1px solid rgba(0,0,0,0.1); 
     box-sizing: border-box;
 }
 
@@ -85,7 +91,7 @@ header p {
 
 .preview-2 {
     background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.8);
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
 }
 
@@ -107,7 +113,7 @@ header p {
 .preview-5 {
     background: linear-gradient(-45deg, #ffb8d1, #e2b0ff, #9fb8ff);
     background-size: 200% 200%;
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .preview-6 {
@@ -117,22 +123,117 @@ header p {
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
 }
 
+.preview-7 {
+    background-color: #e53935;
+    border: 1px solid #b71c1c;
+    background-image: 
+        radial-gradient(#e53935 20%, transparent 20%),
+        radial-gradient(#b71c1c 40%, transparent 40%);
+    background-size: 14px 14px;
+    background-position: 0 0, 1px 1px;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.15);
+}
+
+.preview-8 {
+    background-color: #000000;
+    border: 2px solid #fbc02d;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 100% 4px;
+    box-shadow: 4px 4px 0 #00e5ff, inset 0 0 15px rgba(233, 30, 99, 0.6);
+}
+
+.preview-9 {
+    background-color: #161b22;
+    border: 3px solid #a8b2bd;
+    background-image: linear-gradient(115deg, transparent 20%, rgba(255, 0, 0, 0.3) 30%, rgba(255, 255, 0, 0.3) 40%, rgba(0, 255, 255, 0.3) 60%, rgba(255, 0, 255, 0.3) 70%, transparent 80%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.preview-10 {
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    background-image: 
+        radial-gradient(#000000 15%, transparent 16%), 
+        radial-gradient(#000000 15%, transparent 16%);
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
+    box-shadow: inset 0 0 0 4px #ffffff, inset 0 0 0 7px #000000;
+    position: relative;
+}
+
+.preview-10::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #e60000;
+    z-index: -1;
+    transform: translate(6px, 6px);
+}
+
+.preview-11 {
+    background-color: #2b1d14;
+    border: 4px solid #b58231;
+    background-image: 
+        radial-gradient(circle at 5px 5px, #8b5a2b 3px, transparent 4px),
+        radial-gradient(circle at calc(100% - 5px) 5px, #8b5a2b 3px, transparent 4px),
+        radial-gradient(circle at 5px calc(100% - 5px), #8b5a2b 3px, transparent 4px),
+        radial-gradient(circle at calc(100% - 5px) calc(100% - 5px), #8b5a2b 3px, transparent 4px);
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+.preview-11::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 20px;
+    background: linear-gradient(to bottom, #d4af37, #8b5a2b);
+    border: 1px solid #5a3a18;
+    border-radius: 3px;
+    transform: translateY(-50%);
+}
+
+.preview-12 {
+    background-color: #000000;
+    border: 2px solid #00ff41;
+    background-image: linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px);
+    background-size: 100% 4px;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+    position: relative;
+}
+
+.preview-12::before {
+    content: ">_";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #00ff41;
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 h2 {
     font-size: 1.2rem;
     margin: 0 0 8px 0;
-    color: #222222;
+    color: var(--text-light);
     font-weight: 600;
 }
 
 .card p {
     font-size: 0.9rem;
-    color: #777777;
+    color: var(--text-muted);
     margin: 0;
     line-height: 1.4;
 }
 
 .legal-footer {
-    margin-top: 40px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -141,7 +242,7 @@ h2 {
     font-size: 0.8rem;
     opacity: 0.5;
     transition: opacity 0.3s ease;
-    color: white;
+    color: var(--text-light);
 }
 
 .legal-footer:hover {
@@ -159,4 +260,40 @@ h2 {
 
 .legal-footer span {
     cursor: default;
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.scroll-top-btn img {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%);
+    opacity: 0.9;
 }

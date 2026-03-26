@@ -14,48 +14,108 @@
     </header>
 
     <main class="grid-container">
-        <a href="1/template-1-darkgreen.html" class="card" target="_blank">
+        <a href="1/template-1-darkgreen.html" class="card">
             <div class="preview preview-1"></div>
             <h2>01. Dark Green</h2>
             <p>Naturverbunden, organisch, klassisch</p>
         </a>
         
-        <a href="2/template-2-light.html" class="card" target="_blank">
+        <a href="2/template-2-light.html" class="card">
             <div class="preview preview-2"></div>
             <h2>02. Light & Friendly</h2>
             <p>Hell, modern, weiche Formen</p>
         </a>
 
-        <a href="3/template-3-dark-minimal.html" class="card" target="_blank">
+        <a href="3/template-3-dark-minimal.html" class="card">
             <div class="preview preview-3"></div>
             <h2>03. Dark Minimal</h2>
             <p>Puristisch, elegant, viel Schwarz</p>
         </a>
 
-        <a href="4/template-4-cyberpunk.html" class="card" target="_blank">
+        <a href="4/template-4-cyberpunk.html" class="card">
             <div class="preview preview-4"></div>
             <h2>04. Cyberpunk</h2>
             <p>Kantig, leuchtendes Neon, Tech-Vibe</p>
         </a>
 
-        <a href="5/template-5-cosplay.html" class="card" target="_blank">
+        <a href="5/template-5-cosplay.html" class="card">
             <div class="preview preview-5"></div>
             <h2>05. Cosplay Glass</h2>
             <p>Pastell-Verlauf, Milchglas-Effekt</p>
         </a>
 
-        <a href="6/template-6-fantasy.html" class="card" target="_blank">
+        <a href="6/template-6-fantasy.html" class="card">
             <div class="preview preview-6"></div>
             <h2>06. Fantasy RPG</h2>
             <p>Mystisches Nachtblau, goldene Akzente</p>
         </a>
 
-        <footer class="legal-footer">
-            <a href="../impressum.html">Impressum</a>
-            <span>|</span>
-            <a href="../datenschutz.html">Datenschutz</a>
-        </footer>
-        
+        <a href="7/template-7-bricks.html" class="card">
+            <div class="preview preview-7"></div>
+            <h2>07. Bricks Theme</h2>
+            <p>Bunte Akzente, starker Affiliate-Fokus</p>
+        </a>
+
+        <a href="8/template-8-arcade.html" class="card">
+            <div class="preview preview-8"></div>
+            <h2>08. 8-Bit Arcade</h2>
+            <p>Retro-Gaming, Pixel-Art, CRT-Effekt</p>
+        </a>
+
+        <a href="9/template-9-tcg.html" class="card">
+            <div class="preview preview-9"></div>
+            <h2>09. TCG Holo-Foil</h2>
+            <p>Sammelkarten-Look, Schimmer-Effekt</p>
+        </a>
+
+        <a href="10/template-10-manga.html" class="card">
+            <div class="preview preview-10"></div>
+            <h2>10. Manga & Comic</h2>
+            <p>Halftone-Raster, Panels, harte Kontraste</p>
+        </a>
+
+        <a href="11/template-11-steampunk.html" class="card">
+            <div class="preview preview-11"></div>
+            <h2>11. Steampunk Maker</h2>
+            <p>Messing, Kupfer, Leder & Nieten-Look</p>
+        </a>
+
+        <a href="12/template-12-hacker.html" class="card">
+            <div class="preview preview-12"></div>
+            <h2>12. Terminal Hacker</h2>
+            <p>Monospace, Matrix-Grün, CLI-Optik</p>
+        </a>
+
+
+
+
+
+
     </main>
+
+    <footer class="legal-footer">
+        <a href="impressum.html">Impressum</a>
+        <span>|</span>
+        <a href="datenschutz.html">Datenschutz</a>
+    </footer>
+
+    <a href="#" id="scrollTopBtn" class="scroll-top-btn">
+        <img src="./icons/up-arrow.png" alt="Nach oben">
+    </a>
+
+    <script>
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

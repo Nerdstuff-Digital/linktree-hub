@@ -1,0 +1,307 @@
+:root {
+    --bg-color: #06090e;
+    --card-bg: #161b22;
+    --border-silver: #a8b2bd;
+    --text-main: #c9d1d9;
+    --text-title: #ffffff;
+    --holo-gradient: linear-gradient(115deg, transparent 20%, rgba(255, 0, 0, 0.4) 30%, rgba(255, 255, 0, 0.4) 40%, rgba(0, 255, 0, 0.4) 50%, rgba(0, 255, 255, 0.4) 60%, rgba(0, 0, 255, 0.4) 70%, rgba(255, 0, 255, 0.4) 80%, transparent 90%);
+}
+
+body.linktree-body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at top, #111a28 0%, #06090e 100%);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.linktree-container {
+    width: 100%;
+    max-width: 480px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .linktree-container {
+        background-color: rgba(22, 27, 34, 0.6);
+        border: 1px solid #30363d;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+}
+
+@media (max-width: 500px) {
+    .linktree-container {
+        margin: 0;
+        padding-top: 50px;
+    }
+}
+
+.action-btn {
+    position: absolute;
+    top: 25px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-silver);
+    border-radius: 6px;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.action-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: var(--holo-gradient);
+    transition: all 0.6s ease;
+    transform: skewX(-20deg);
+    z-index: 0;
+}
+
+.action-btn:hover::before {
+    left: 100%;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    border-color: #ffffff;
+}
+
+.top-right {
+    right: 20px;
+}
+
+.top-left {
+    left: 20px;
+}
+
+.custom-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: invert(100%);
+    position: relative;
+    z-index: 1;
+}
+
+.linktree-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+.avatar-card {
+    width: 110px;
+    height: 110px;
+    background-color: var(--card-bg);
+    border: 3px solid var(--border-silver);
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.avatar-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: var(--holo-gradient);
+    transition: all 0.8s ease;
+    transform: skewX(-20deg);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.avatar-card:hover::before {
+    left: 100%;
+}
+
+.linktree-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.linktree-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-title);
+    margin: 0 0 10px 0;
+    letter-spacing: 0.5px;
+}
+
+.linktree-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 25px 0;
+    max-width: 90%;
+    color: var(--text-main);
+}
+
+.social-icons-row {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-silver);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: var(--holo-gradient);
+    transition: all 0.5s ease;
+    transform: skewX(-20deg);
+    z-index: 0;
+}
+
+.social-icon:hover::before {
+    left: 100%;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    border-color: #ffffff;
+}
+
+.linktree-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.linktree-btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    color: var(--text-title);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--border-silver);
+    padding: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.linktree-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: var(--holo-gradient);
+    transition: all 0.6s ease;
+    transform: skewX(-20deg);
+    z-index: 0;
+}
+
+.linktree-btn:hover::before {
+    left: 100%;
+}
+
+.linktree-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    border-color: #ffffff;
+}
+
+.link-icon {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 51px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.legal-footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    opacity: 0.6;
+}
+
+.legal-footer a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.legal-footer a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.legal-footer span {
+    cursor: default;
+}

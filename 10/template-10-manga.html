@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links | Dein Name (Fantasy/RPG)</title>
+    <title>Comic Links | Dein Name (Manga & Comic)</title>
     <link rel="icon" href="../img/favicon.png">
-    <link rel="stylesheet" href="style-fantasy.css">
+    <link rel="stylesheet" href="style-manga.css">
 </head>
 <body class="linktree-body">
 
@@ -20,70 +20,70 @@
         </button>
 
         <div class="linktree-profile">
-            <div class="avatar-frame">
+            <div class="comic-avatar-frame">
                 <img src="../img/logo.jpg" alt="Profilbild" class="linktree-logo">
             </div>
-            <h1 class="linktree-title">Dein Name</h1>
-            <p class="linktree-desc">"Tritt ein, Reisender." ✨ Dungeon Master, Weltenbauer & Autor epischer Sagen.</p>
+            <h1 class="linktree-title">Mangaka Artist</h1>
+            <p class="linktree-desc">Illustrationen, Webcomics & Speedpaints! Klicke dich durch meine Panels. 💥✏️</p>
             
             <div class="social-icons-row">
+                <a href="#" target="_blank" class="social-icon">
+                    <img src="../icons/youtube.png" alt="YouTube" class="custom-icon profile-icon">
+                </a>
                 <a href="#" target="_blank" class="social-icon">
                     <img src="../icons/insta.png" alt="Instagram" class="custom-icon profile-icon">
                 </a>
                 <a href="#" target="_blank" class="social-icon">
                     <img src="../icons/tiktok.png" alt="TikTok" class="custom-icon profile-icon">
                 </a>
-                <a href="mailto:deine@email.de" class="social-icon">
-                    <img src="../icons/mail.png" alt="E-Mail" class="custom-icon profile-icon">
-                </a>
             </div>
         </div>
 
         <div class="linktree-links">
             
-            <a href="#" target="_blank" class="linktree-btn">
+            <a href="#" target="_blank" class="linktree-btn comic-panel-primary">
                 <div class="link-icon">
-                    <img src="../icons/website.png" alt="Webseite" class="custom-icon button-icon">
+                    <img src="../icons/website.png" alt="Webtoon" class="custom-icon button-icon">
                 </div>
-                <span class="btn-text">Meine Taverne (Webseite)</span>
+                <span class="btn-text">LIES MEINEN WEBCOMIC</span>
             </a>
 
-            <a href="#" target="_blank" class="linktree-btn">
+            <a href="#" target="_blank" class="linktree-btn comic-panel">
+                <div class="link-icon">
+                    <img src="../icons/youtube.png" alt="YouTube" class="custom-icon button-icon">
+                </div>
+                <span class="btn-text">Neuestes Speedpaint-Video</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn comic-panel">
                 <div class="link-icon">
                     <img src="../icons/insta.png" alt="Instagram" class="custom-icon button-icon">
                 </div>
-                <span class="btn-text">Bilderkloster (Instagram)</span>
+                <span class="btn-text">Skizzen & WIPs (Instagram)</span>
             </a>
 
-            <a href="#" target="_blank" class="linktree-btn">
+            <a href="#" target="_blank" class="linktree-btn comic-panel">
                 <div class="link-icon">
                     <img src="../icons/tiktok.png" alt="TikTok" class="custom-icon button-icon">
                 </div>
-                <span class="btn-text">Barden-Gesang (TikTok)</span>
+                <span class="btn-text">Art-Transitions auf TikTok</span>
             </a>
 
-            <a href="#" target="_blank" class="linktree-btn">
+            <a href="#" target="_blank" class="linktree-btn comic-panel">
                 <div class="link-icon">
-                    <img src="../icons/cafe.png" alt="Kaffeekasse" class="custom-icon button-icon">
+                    <img src="../icons/cafe.png" alt="Ko-Fi" class="custom-icon button-icon">
                 </div>
-                <span class="btn-text">Spende einen Heiltrank (Ko-fi)</span>
-            </a>
-
-            <a href="#" target="_blank" class="linktree-btn">
-                <div class="link-icon">
-                    <img src="../icons/amazon.png" alt="Amazon Wunschliste" class="custom-icon button-icon">
-                </div>
-                <span class="btn-text">Gaben der Götter (Wunschliste)</span>
+                <span class="btn-text">Spendiere mir einen Kaffee</span>
             </a>
 
         </div>
-
+        
         <footer class="legal-footer">
             <a href="../impressum.html">Impressum</a>
             <span>|</span>
             <a href="../datenschutz.html">Datenschutz</a>
         </footer>
-
+        
     </main>
 
     <script>
@@ -91,8 +91,8 @@
             if (navigator.share) {
                 try {
                     await navigator.share({
-                        title: 'Meine Links',
-                        text: 'Schau dir meine aktuellen Links an!',
+                        title: 'Meine Comic Links',
+                        text: 'Schau dir meine neuesten Illustrationen und Webcomics an!',
                         url: window.location.href
                     });
                 } catch (err) {

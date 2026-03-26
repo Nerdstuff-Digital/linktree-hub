@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Links | Dein Name (8-Bit Arcade)</title>
+    <link rel="icon" href="../img/favicon.png">
+    <link rel="stylesheet" href="style-arcade.css">
+</head>
+<body class="linktree-body crt-effect">
+
+    <main class="linktree-container">
+        
+        <a href="../index.html" class="action-btn top-left arc-btn-back" aria-label="Zurück zur Übersicht">
+            <img src="../icons/zuruck-pfeil.png" alt="Zurück" class="custom-icon back-icon icon-cyan">
+        </a>
+
+        <button id="share-btn" class="action-btn top-right arc-btn-share" aria-label="Seite teilen">
+            <img src="../icons/share.png" alt="Teilen" class="custom-icon share-icon icon-magenta">
+        </button>
+
+        <div class="linktree-profile">
+            <div class="avatar-frame">
+                <img src="../img/logo.jpg" alt="Profilbild" class="linktree-logo">
+            </div>
+            <h1 class="linktree-title">> PLAYER_ONE</h1>
+            <p class="linktree-desc">RETRO GAMING. SPEEDRUNS. PIXEL ART. LEVEL-UP YOUR DAY! CHOOSE YOUR PATH... </p>
+            
+            <div class="social-icons-row">
+                <a href="#" target="_blank" class="social-icon arc-social-btn-youtube">
+                    <img src="../icons/youtube.png" alt="YouTube" class="custom-icon profile-icon icon-white">
+                </a>
+                <a href="#" target="_blank" class="social-icon arc-social-btn-twitch">
+                    <img src="../icons/twitch.png" alt="Twitch" class="custom-icon profile-icon icon-white">
+                </a>
+                <a href="#" target="_blank" class="social-icon arc-social-btn-insta">
+                    <img src="../icons/insta.png" alt="Instagram" class="custom-icon profile-icon icon-white">
+                </a>
+            </div>
+        </div>
+
+        <div class="linktree-links">
+            
+            <a href="#" target="_blank" class="linktree-btn arc-btn-main">
+                <div class="link-icon">
+                    <img src="../icons/twitch.png" alt="Twitch" class="custom-icon button-icon icon-black">
+                </div>
+                <span class="btn-text">WATCH LIVE STREAM</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn arc-btn-main">
+                <div class="link-icon">
+                    <img src="../icons/youtube.png" alt="YouTube" class="custom-icon button-icon icon-black">
+                </div>
+                <span class="btn-text">NEWEST SPEEDRUN VIDEO</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn arc-btn-sub">
+                <div class="link-icon">
+                    <img src="../icons/insta.png" alt="Instagram" class="custom-icon button-icon icon-white">
+                </div>
+                <span class="btn-text">MY PIXEL ART PORTFOLIO</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn arc-btn-sub">
+                <div class="link-icon">
+                    <img src="../icons/cafe.png" alt="Kaffeekasse" class="custom-icon button-icon icon-white">
+                </div>
+                <span class="btn-text">BUY ME A LIFE PUTION</span>
+            </a>
+
+            <a href="#" target="_blank" class="linktree-btn arc-btn-sub">
+                <div class="link-icon">
+                    <img src="../icons/amazon.png" alt="Amazon Wunschliste" class="custom-icon button-icon icon-white">
+                </div>
+                <span class="btn-text">MY SETUP WISHLIST</span>
+            </a>
+
+        </div>
+        
+        <footer class="legal-footer">
+            <a href="../impressum.html">Impressum</a>
+            <span>|</span>
+            <a href="../datenschutz.html">Datenschutz</a>
+        </footer>
+        
+    </main>
+
+    <script>
+        document.getElementById('share-btn').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Player One Links',
+                        text: 'Schau dir meine aktuellen Streams und Videos an!',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Teilen abgebrochen oder fehlgeschlagen', err);
+                }
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link wurde in die Zwischenablage kopiert!');
+            }
+        });
+    </script>
+
+</body>
+</html>
