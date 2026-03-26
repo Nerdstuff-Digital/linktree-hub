@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linktree Vorlagen</title>
+    <title>Digitale Visitenkarten & Bio-Links</title>
     <link rel="icon" href="./img/favicon.png">
     <link rel="stylesheet" href="showcase.css">
 </head>
 <body>
-    <header>
-        <h1>Wähle dein Design</h1>
-        <p>Klicke auf eine Vorlage, um sie in der Live-Vorschau zu sehen.</p>
-    </header>
 
-    <main class="grid-container">
+    <div class="hero-viewport">
+        <div class="hero-content">
+            <h1 class="hero-title">Digitale Visitenkarten</h1>
+            <h2 class="hero-subtitle">Wähle dein individuelles Design</h2>
+
+            <div class="hero-text-box">
+                <p>Hier erwartet dich eine wachsende Auswahl an 100 % DSGVO-konformen Vorlagen für deinen Auftritt. Ich stelle dir nicht nur das Grundgerüst zur Verfügung, sondern übernehme als Service auch die komplette Einrichtung und Anpassung deiner neuen Seite.</p>
+            </div>
+
+            <div class="hero-divider"></div>
+
+            <div class="hero-text-box">
+                <p><strong>Alles ist anpassbar:</strong> <br>Farben, Icons und Schriften stimme ich exakt auf dein Branding ab. Ist dein Traumdesign hier noch nicht dabei? Lass uns sprechen – ich programmiere dir eine exklusive Vorlage ganz nach deinen Wünschen!</p>
+            </div>
+        </div>
+
+        <a href="#templates" class="scroll-down-btn">
+            <img src="./icons/down-arrow.png" alt="Nach unten scrollen">
+        </a>
+    </div>
+
+    <main id="templates" class="grid-container">
         <a href="1/template-1-darkgreen.html" class="card">
             <div class="preview preview-1"></div>
             <h2>01. Dark Green</h2>
@@ -85,12 +102,6 @@
             <h2>12. Terminal Hacker</h2>
             <p>Monospace, Matrix-Grün, CLI-Optik</p>
         </a>
-
-
-
-
-
-
     </main>
 
     <footer class="legal-footer">
@@ -106,7 +117,7 @@
     <script>
         const scrollBtn = document.getElementById('scrollTopBtn');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) {
+            if (window.scrollY > 500) {
                 scrollBtn.classList.add('show');
             } else {
                 scrollBtn.classList.remove('show');
